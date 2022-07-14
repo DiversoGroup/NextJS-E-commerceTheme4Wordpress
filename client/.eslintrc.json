@@ -10,7 +10,8 @@
   "plugin:react-hooks/recommended",
   "plugin:prettier/recommended",
   "plugin:tailwindcss/recommended",
-  "next/core-web-vitals"
+  "next/core-web-vitals",
+  
   ],
   "parserOptions": {
   "ecmaFeatures": {
