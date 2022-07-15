@@ -10,8 +10,10 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
+    "apollo-client": "^2.6.10",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-tailwindcss": "^3.6.0",
+    "graphql": "^15.8.0",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
