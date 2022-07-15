@@ -10,8 +10,17 @@
   "plugin:react-hooks/recommended",
   "plugin:prettier/recommended",
   "plugin:tailwindcss/recommended",
+  // "next/babel",
   "next/core-web-vitals"
   ],
+  "settings": {
+    "import/resolver": {
+        "node": {
+            "extensions": [".js", ".jsx"],
+            "moduleDirectory": ["node_modules", "src/"]
+        }
+    }
+},
   "parserOptions": {
   "ecmaFeatures": {
       "jsx": true,
