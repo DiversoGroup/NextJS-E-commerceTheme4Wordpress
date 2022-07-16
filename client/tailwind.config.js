@@ -25,6 +25,10 @@ module.exports = {
         'hero-pattern':
           "url('../images/anchor-lee-kO1G3neRA2o-unsplash 1.png')",
       },
+      gridTemplateColumns: {
+        card2: 'repeat(2, minmax(0, 163px))',
+        card3: 'repeat(3, minmax(0, 163px))',
+      },
     },
   },
   plugins: [],
