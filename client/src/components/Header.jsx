@@ -4,7 +4,9 @@ import imgHome from 'assets/images/logopng1PNG 1.png';
 import imgAvatar from 'assets/images/user-avatar.png';
 import { useState } from 'react';
 import Link from 'next/link';
+import { ApolloConsumer } from '@apollo/client';
 import Menu from './Menu';
+import { GET_MENUS } from '../apollo/queries/getMenus';
 
 function Header() {
   const [menu, setMenu] = useState(false);
@@ -12,6 +14,7 @@ function Header() {
     const newState = !menu;
     setMenu(newState);
   };
+
   return (
     <>
       <nav className="fixed z-20 flex h-14 w-screen justify-between bg-primary px-6">
@@ -32,7 +35,26 @@ function Header() {
           </Link>
         </button>
       </nav>
-      <Menu menuState={menu} />
+      <Menu menuState={menu} />;
+      <ApolloConsumer>
+        {(client) => {
+          client
+            .query({
+              query: GET_MENUS,
+            })
+            .then((res) => {
+              const {
+                data: {
+                  headerMenus: { edges },
+                },
+              } = res;
+              //este fucking edges es que que deberia renderizar
+              console.log(edges);
+            });
+
+          return <Menu menuState={menu} />;
+        }}
+      </ApolloConsumer>
     </>
   );
 }

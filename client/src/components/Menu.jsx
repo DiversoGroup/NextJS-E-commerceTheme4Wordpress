@@ -7,6 +7,9 @@ function Menu(prop) {
   useEffect(() => {
     setMenu(menuState);
   }, [menuState]);
+
+  console.log(prop);
+
   return (
     <div
       className={`absolute top-0 z-10 flex h-screen w-screen flex-col items-center justify-center bg-primary duration-300 ease-in ${
@@ -15,17 +18,16 @@ function Menu(prop) {
     >
       <div className="w-full text-center">
         <ul className="flex h-[80vh] flex-col items-center justify-center gap-3 font-outfitM text-3xl text-textGray">
-          <li className="w-[40%] border-b-4 border-transparent hover:border-textDark  hover:text-textDark ">
-            <Link href="/">Home</Link>
-          </li>
+          {/* {edges.map((edge) => (
+                  <li
+                    className="w-[40%] border-b-4 border-transparent hover:border-textDark  hover:text-textDark "
+                    key={edge.node.id}
+                  >
+                    <Link href={edge.node.path}>{edge.node.label}</Link>
+                  </li>
+                ))} */}
           <li className="w-[40%] border-b-4 border-transparent hover:border-textDark  hover:text-textDark ">
             <Link href="/Catalogue">Catalogue</Link>
-          </li>
-          <li className="w-[40%] border-b-4 border-transparent hover:border-textDark  hover:text-textDark ">
-            Contact
-          </li>
-          <li className="w-[40%] border-b-4 border-transparent hover:border-textDark  hover:text-textDark ">
-            settings
           </li>
         </ul>
       </div>
@@ -62,4 +64,5 @@ function Menu(prop) {
     </div>
   );
 }
+
 export default Menu;

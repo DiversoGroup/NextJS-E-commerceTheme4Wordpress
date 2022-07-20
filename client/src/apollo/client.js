@@ -20,12 +20,7 @@ const defaultOptions = {
 
 const link = createHttpLink({
   uri: `${process.env.NEXT_PUBLIC_WP_API_URL}/graphql`,
-  credentials: 'include',
-
-  // This fecth option is temporary, while the SSL certificate of the back is being created.
-  fetchOptions: {
-    agent: (process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0),
-  },
+  credentials: 'same-origin',
 });
 
 const cache = new InMemoryCache({
