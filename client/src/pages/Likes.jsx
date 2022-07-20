@@ -1,6 +1,6 @@
-//import { useEffect } from 'react';
-import LikedItem from '../components/LikedItem';
+// import { useEffect } from 'react';
 import { Icon } from '@iconify/react';
+import LikedItem from '../components/LikedItem';
 
 function Likes() {
   return (
@@ -11,10 +11,10 @@ function Likes() {
           <span className="font-outfitM text-2xl text-textDark">6</span>
         </div>
       </section>
-      <section className="flex justify-between h-16 items-center mt-[10px]">
+      <section className="mt-[10px] flex h-16 items-center justify-between">
         <button
           type="button"
-          className="flex w-[70%] h-12  items-center justify-center rounded-lg bg-btnColor px-5 font-outfitL text-lg sp:h-14 sp:text-2xl text-primary"
+          className="flex h-12 w-[70%]  items-center justify-center rounded-lg bg-btnColor px-5 font-outfitL text-lg text-primary sp:h-14 sp:text-2xl"
         >
           <span className="flex pl-3 md:block">
             <Icon className="mr-[8px] h-7 w-7" icon="bi:cart" />
@@ -22,11 +22,14 @@ function Likes() {
           </span>
         </button>
 
-        <button className="flex h-14 w-14  items-center justify-center rounded-full bg-primary drop-shadow-md sp:text-2xl text-textGray">
+        <button
+          type="button"
+          className="flex h-14 w-14  items-center justify-center rounded-full bg-primary text-textGray drop-shadow-md sp:text-2xl"
+        >
           <Icon className="h-7 w-7" icon="fa6-regular:trash-can" />
         </button>
       </section>
-      <section className="flex justify-betwen space-y-3 flex-col mt-[30px] pb-[30px]">
+      <section className="justify-betwen mt-[30px] flex flex-col space-y-3 pb-[30px]">
         <LikedItem />
         <LikedItem />
         <LikedItem />

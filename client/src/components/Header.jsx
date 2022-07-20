@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Icon } from '@iconify/react';
+import { ApolloConsumer } from '@apollo/client';
 import Menu from './Menu';
 
 function Header() {
@@ -31,7 +32,11 @@ function Header() {
           </Link>
         </button>
       </nav>
-      <Menu menuState={menu} />
+      <ApolloConsumer>
+        {(client) => {
+          return <Menu menuState={menu} {...client} />;
+        }}
+      </ApolloConsumer>
     </>
   );
 }
