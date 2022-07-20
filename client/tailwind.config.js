@@ -17,6 +17,7 @@ module.exports = {
         secondarySoft: '#F4F4F4',
         textDark: '#191919',
         textGray: '#878787',
+        darkGray: '#5A5A5A',
         softDark: '#494949',
         footerBg: '#404040',
       },
