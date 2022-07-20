@@ -4,31 +4,23 @@ import { useRouter } from 'next/router';
 import PagesTitle from './PagesTitle';
 import Button from './Button';
 import ContentText from './ContentText';
+import { Icon } from '@iconify/react';
 
 function Landing() {
   const router = useRouter();
   return (
     <main className="flex h-screen min-h-[660px] flex-col items-center justify-start space-y-[9vh] overflow-hidden bg-hero-pattern bg-cover bg-center bg-no-repeat px-8">
-      <div className="mt-[10vh] w-full">
+      <div className="mt-[12vh] w-full">
         <PagesTitle>
           This is the Diverso’s E-commerce theme/template for wordpress
         </PagesTitle>
-        <ContentText>
-          For a better understanding take a look of the README.md document
-        </ContentText>
       </div>
       <button
         type="button"
-        className="flex h-16 min-h-[4rem] w-16 justify-center rounded-full bg-btnColor"
+        className="flex items-center h-16 min-h-[4rem] w-16 justify-center rounded-full bg-btnColor"
         onClick={() => router.push('/Catalogue')}
       >
-        <Image
-          // loader={myLoader}
-          src={imgStore}
-          alt="Picture of the author"
-          width={34}
-          height={36}
-        />
+      <Icon className="h-7 w-7 text-primary" icon="bi:shop" />
       </button>
       <section className="w-full min-w-min">
         <h2 className="font-outfitM text-2xl text-textDark">

@@ -5,8 +5,11 @@ import imgAvatar from 'assets/images/user-avatar.png';
 import { useState } from 'react';
 import Link from 'next/link';
 import Menu from './Menu';
+import { useRouter } from 'next/router';
+import { Icon } from '@iconify/react';
 
 function Header() {
+  const router = useRouter();
   const [menu, setMenu] = useState(false);
   const handleClick = () => {
     const newState = !menu;
@@ -23,12 +26,15 @@ function Header() {
             height={23}
           />
         </button>
-        <button type="button">
+        <button type="button" onClick={() => router.push('/')}>
           <Image src={imgHome} alt="Picture of the author" />
         </button>
         <button type="button">
           <Link href="/Login">
-            <Image src={imgAvatar} alt="Picture of the author" />
+            <Icon
+              className="h-10 w-10 text-darkGray"
+              icon="carbon:user-avatar"
+            />
           </Link>
         </button>
       </nav>
