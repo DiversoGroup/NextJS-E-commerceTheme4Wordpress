@@ -1,5 +1,9 @@
 function ContentText(prop) {
-  const { children } = prop;
-  return <p className="font-outfitL text-base text-textGray">{children}</p>;
+  const { children, additionalStyle } = prop;
+  return (
+    <p className={`font-outfitL text-base text-textGray ${additionalStyle}`}>
+      {children}
+    </p>
+  );
 }
 export default ContentText;

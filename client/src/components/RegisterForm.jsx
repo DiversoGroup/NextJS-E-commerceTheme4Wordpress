@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import Link from 'next/link';
 import Button from './Button';
 
 const schema = yup.object().shape({
@@ -99,6 +100,7 @@ function RegisterForm() {
       <Button
         bgStyle="bg-btnColor"
         textColor="text-primary"
+        center
         submit
         // additionalStyle="flex justify-center items-center"
       >
@@ -106,12 +108,9 @@ function RegisterForm() {
       </Button>
       <span className="my-4 flex justify-center text-lg">
         <h3>Already have an account?</h3>
-        <a
-          className="pl-2 font-outfitM text-btnColor underline"
-          href="https://thebeginningaftertheend.online/manga/the-beginning-after-the-end-chapter-154/"
-        >
-          Sign in
-        </a>
+        <Link href="/Login">
+          <a className="pl-2 font-outfitM text-btnColor underline">Sign in</a>
+        </Link>
       </span>
     </form>
   );

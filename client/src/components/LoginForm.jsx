@@ -1,6 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import Link from 'next/link';
+import InputTextElement from './InputTextElement';
+import LabelElement from './LabelElement';
+import Button from './Button';
 
 const schema = yup.object().shape({
   email: yup.string().email().required(),
@@ -21,54 +25,34 @@ function LoginForm() {
   const sendData = (data) => console.log(data);
   return (
     <form className="w-full font-outfitL" onSubmit={handleSubmit(sendData)}>
-      <label
-        htmlFor="email"
-        className={`w-full  ${errors.email ? 'text-red-400' : 'text-btnColor'}`}
+      <LabelElement
+        forElement="email"
+        name="Email"
+        error={errors.email}
+        errorMessage="A valid email is required."
       >
-        <span className="mt-3 mb-2 block text-lg">Email</span>
-        <input
+        <InputTextElement
           type="text"
           name="email"
-          id="email"
-          autoComplete="off"
           placeholder="elpepe@gmail.com"
-          className={`h-12 w-full rounded-lg border-2 bg-primary py-2 px-3 caret-btnColor outline-none placeholder:text-textGray focus:border-btnColor ${
-            errors.email
-              ? 'border-red-400 text-red-300'
-              : 'border-primary text-textDark'
-          }`}
-          {...register('email', { required: true })}
+          error={errors.email}
+          register={register('email', { required: true })}
         />
-        {errors.email && (
-          <p className="mt-2 text-sm text-red-500">
-            A valid email is required.
-          </p>
-        )}
-      </label>
-      <label
-        htmlFor="password"
-        className={` ${errors.password ? 'text-red-400' : 'text-btnColor'}`}
+      </LabelElement>
+      <LabelElement
+        forElement="password"
+        name="Password"
+        error={errors.password}
+        errorMessage="Your password is required."
       >
-        <span className="mt-3 mb-2 block text-lg">Password</span>
-        <input
+        <InputTextElement
           type="password"
           name="password"
-          id="password"
-          autoComplete="off"
           placeholder="superduperpassword"
-          className={`h-12 w-full rounded-lg border-2 bg-primary py-2 px-3 caret-btnColor outline-none placeholder:text-textGray focus:border-btnColor ${
-            errors.email
-              ? 'border-red-400 text-red-300'
-              : 'border-primary text-textDark'
-          }`}
-          {...register('password', { required: true })}
+          error={errors.password}
+          register={register('password', { required: true })}
         />
-        {errors.password && (
-          <p className="mt-2 text-sm text-red-500">
-            Your password is required.
-          </p>
-        )}
-      </label>
+      </LabelElement>
       <span className="my-3 block  w-full text-right">
         <a
           className="font-outfitM text-btnColor underline"
@@ -77,20 +61,14 @@ function LoginForm() {
           Forgot your password?
         </a>
       </span>
-      <button
-        className="mt-[3vh] h-12  w-full rounded-lg bg-btnColor font-outfitL text-lg text-primary sp:h-14 sp:text-2xl"
-        type="submit"
-      >
-        Sign in
-      </button>
+      <Button bgStyle="bg-btnColor" textColor="text-primary" center>
+        Sing in
+      </Button>
       <span className="my-4 flex justify-center text-lg">
         <h3>Don’t have an account?</h3>
-        <a
-          className="pl-2 font-outfitM text-btnColor underline"
-          href="https://thebeginningaftertheend.online/manga/the-beginning-after-the-end-chapter-154/"
-        >
-          Sign up
-        </a>
+        <Link href="/Register">
+          <a className="pl-2 font-outfitM text-btnColor underline">Sign up</a>
+        </Link>
       </span>
     </form>
   );

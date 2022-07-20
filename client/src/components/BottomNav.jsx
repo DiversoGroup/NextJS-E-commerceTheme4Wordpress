@@ -2,8 +2,14 @@ import Image from 'next/image';
 import imgHeart from 'assets/images/heart.png';
 import imgCart from 'assets/images/cart.png';
 import imgSearch from 'assets/images/Search.png';
+import useWindowSize from 'hooks/useWindowsRezise';
 
 function BottomNav() {
+  const viewPort = useWindowSize();
+
+  if (viewPort.width > 600) {
+    return null;
+  }
   return (
     <>
       <div className="fixed bottom-0 flex h-14 w-screen items-start justify-between  bg-primary px-10 pt-3">

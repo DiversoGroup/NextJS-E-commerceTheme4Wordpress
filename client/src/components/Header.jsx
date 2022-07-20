@@ -27,8 +27,10 @@ function Header() {
           <Image src={imgHome} alt="Picture of the author" />
         </button>
         <button type="button">
-          <Link href="/Login">
-            <Image src={imgAvatar} alt="Picture of the author" />
+          <Link href="/Login" passHref>
+            <a>
+              <Image src={imgAvatar} alt="Picture of the author" />
+            </a>
           </Link>
         </button>
       </nav>

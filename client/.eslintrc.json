@@ -48,6 +48,11 @@
   "no-nested-ternary": "off",
   "tailwindcss/classnames-order": "warn",
   "tailwindcss/no-custom-classname": "warn",
-  "tailwindcss/no-contradicting-classname": "error"
+  "tailwindcss/no-contradicting-classname": "error",
+  "jsx-a11y/anchor-is-valid": [ "error", {
+    "components": [ "Link" ],
+    "specialLink": [ "hrefLeft", "hrefRight" ],
+    "aspects": [ "invalidHref", "preferButton" ]
+  }]
   }
 }
