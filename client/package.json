@@ -10,11 +10,11 @@
     "lint:fix": "next lint --fix"
   },
   "dependencies": {
-    "apollo-client": "^2.6.10",
+    "@apollo/client": "^3.6.9",
     "@hookform/resolvers": "^2.9.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-tailwindcss": "^3.6.0",
-    "graphql": "^15.8.0",
+    "graphql": "^16.5.0",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -22,6 +22,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@iconify/react": "^3.2.2",
     "autoprefixer": "^10.4.7",
     "eslint": "^8.19.0",
     "eslint-config-airbnb": "^19.0.4",
